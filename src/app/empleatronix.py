@@ -7,7 +7,7 @@ st.subheader('Todos los datos sobre los empleados en una aplicación.')
 
 @st.cache_data
 def load_data(nrows):
-    data = pd.read_csv("/src/data/employees.csv", nrows=nrows)
+    data = pd.read_csv("/src/data/employees.csv")
     return data
 
 data = load_data()
