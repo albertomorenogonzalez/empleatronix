@@ -33,11 +33,18 @@ with col3:
 
 fig, ax = plt.subplots()
 
-data['empty'] = " "
+# Create a new DataFrame based on visibility settings
+visible_data = data[['full name', 'salary']] if show_name and show_salary else data[['empty', 'salary']]
 
 if show_name:
-    ax.barh(data['full name'], data['salary'], color=color)
+    ax.barh(visible_data['full name'], visible_data['salary'], color=color)
 else:
-    ax.barh(data['empty'], data['salary'], color=color)
+    ax.barh(visible_data['empty'], visible_data['salary'], color=color)
 
+# Set labels and title
+ax.set_xlabel('Salary')
+ax.set_ylabel('Full Name' if show_name else '')
+ax.set_title('Horizontal Bar Chart')
+
+# Display the plot using Streamlit
 st.pyplot(fig)
