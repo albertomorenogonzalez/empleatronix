@@ -7,8 +7,7 @@ st.subheader('Todos los datos sobre los empleados en una aplicación.')
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv('https://s3-us-west-2.amazonaws.com/'
-         'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+    data = pd.read_csv('data/employees.csv')
     return data
 
 data = load_data()
