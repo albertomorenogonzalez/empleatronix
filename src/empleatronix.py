@@ -29,3 +29,15 @@ with col2:
 
 with col3:
     show_salary = st.toggle('Mostrar el sueldo en la barra')
+
+
+fig, ax = plt.subplots()
+
+data['empty'] = data['full name'] * 0
+
+if show_name:
+    ax.barh(data['full name'], data['salary'], color=color)
+else:
+    ax.barh(data['empty'], data['salary'], color=color)
+
+st.pyplot(fig)
