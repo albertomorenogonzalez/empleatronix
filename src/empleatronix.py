@@ -33,7 +33,7 @@ with col3:
 
 fig, ax = plt.subplots()
 
-data['empty'] = data['full name'] * 0
+data['empty'] = " "
 
 if show_name:
     ax.barh(data['full name'], data['salary'], color=color)
