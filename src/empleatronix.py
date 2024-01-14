@@ -34,12 +34,10 @@ with col3:
 fig, ax = plt.subplots()
 
 if show_name:
-    ax.barh(data['full name'], data['salary'], color=color)
-    ax.bar_label(ax.containers[0], padding=5)
+    bars = ax.barh(data['full name'], data['salary'], color=color)
+    ax.bar_label(bars, padding=5)
 else:
-    ax.barh(data['full name'], data['salary'], color=color)
-    ax.bar_label(ax.containers[0], padding=5)
+    bars = ax.barh(data['full name'], data['salary'], color=color)
     ax.yaxis.set_visible(False)
     ax.set_ylim([-0.5, len(data['full name']) - 0.5])
-
 st.pyplot(fig)
