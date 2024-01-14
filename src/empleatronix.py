@@ -46,5 +46,6 @@ if salary:
 
 st.pyplot(fig)
 
-st.write("Alberto Moreno González")
+st.write()
+st.write("Autor: Alberto Moreno González - ")
 st.write("Máster FP en Inteligencia Artificial y Big Data del Centro Integrado en CPIFP Alan Turing (Málaga)")
