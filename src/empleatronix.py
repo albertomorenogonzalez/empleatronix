@@ -25,7 +25,7 @@ with col1:
     color = st.color_picker('Elige un color para las barras', '#3475B3')
 
 with col2:
-    name = st.toggle('Mostrar el nombre')
+    name = st.toggle('Mostrar el nombre', value=True)
 
 with col3:
     salary = st.toggle('Mostrar el sueldo en la barra')
@@ -34,18 +34,15 @@ with col3:
 fig, ax = plt.subplots()
 
 bars = ax.barh(data['full name'], data['salary'], color=color)
+ax.tick_params(axis='x', rotation=90)
 
-def show_name(name, bars):
-    if not name:
-        ax.yaxis.set_visible(False)
-        ax.set_ylim([-0.5, len(data['full name']) - 0.5])
+if not name:
+    ax.yaxis.set_visible(False)
+    ax.set_ylim([-0.5, len(data['full name']) - 0.5])
 
-    show_salary(salary, bars)
-
-def show_salary(salary, bars):
-    if salary:
-        ax.bar_label(bars, fmt="%d €", padding=5)
-
-show_name(name, bars)
+if salary:
+    ax.bar_label(bars, fmt="%d €", padding=5)
 
 st.pyplot(fig)
+
+st.write("Alberto Moreno González - Máster FP en Inteligencia Artificial y Big Data del Centro Integrado en CPIFP Alan Turing (Málaga)")
