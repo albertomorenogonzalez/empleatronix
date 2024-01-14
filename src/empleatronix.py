@@ -33,12 +33,11 @@ with col3:
 
 fig, ax = plt.subplots()
 
-data['empty'] = " "
-
 if show_name:
     ax.barh(data['full name'], data['salary'], color=color)
 else:
-    ax.yaxis.set_visible(False)
     ax.barh(data['full name'], data['salary'], color=color)
+    ax.yaxis.set_visible(False)
+    ax.set_ylim([-0.5, len(data['full name']) - 0.5])
 
 st.pyplot(fig)
