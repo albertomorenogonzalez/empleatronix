@@ -44,7 +44,7 @@ def show_name(name, bars):
 
 def show_salary(salary, bars):
     if salary:
-        ax.bar_label(bars + " €", padding=5)
+        ax.bar_label(bars, fmt="%d €", padding=5)
 
 show_name(name, bars)
 
