@@ -14,7 +14,7 @@ def load_data():
 data = load_data()
 
 if st.checkbox('Mostrar datos de empleados'):
-    st.subheader('Datos de los Empleados')
+    st.write('Datos de los Empleados')
     st.write(data)
 
 st.divider()
@@ -46,6 +46,7 @@ if salary:
 
 st.pyplot(fig)
 
-st.write()
+st.divider()
+
 st.write("Autor: Alberto Moreno González - ")
 st.write("Máster FP en Inteligencia Artificial y Big Data del Centro Integrado en CPIFP Alan Turing (Málaga)")
