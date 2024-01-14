@@ -35,6 +35,7 @@ fig, ax = plt.subplots()
 
 bars = ax.barh(data['full name'], data['salary'], color=color)
 ax.tick_params(axis='x', rotation=90)
+ax.set_xlim(0, 4500)
 
 if not name:
     ax.yaxis.set_visible(False)
@@ -45,4 +46,5 @@ if salary:
 
 st.pyplot(fig)
 
-st.write("Alberto Moreno González - Máster FP en Inteligencia Artificial y Big Data del Centro Integrado en CPIFP Alan Turing (Málaga)")
+st.write("Alberto Moreno González")
+st.write("Máster FP en Inteligencia Artificial y Big Data del Centro Integrado en CPIFP Alan Turing (Málaga)")
