@@ -38,6 +38,7 @@ data['empty'] = " "
 if show_name:
     ax.barh(data['full name'], data['salary'], color=color)
 else:
-    ax.barh(data['salary'], color=color)
+    ax.yaxis.set_visible(False)
+    ax.barh(data['full name'], data['salary'], color=color)
 
 st.pyplot(fig)
