@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 st.title('EMPLEATRONIX')
-st.subheader('Todos los datos sobre los empleados en una aplicación.')
+st.write('Todos los datos sobre los empleados en una aplicación.')
 
 @st.cache_data
 def load_data():
@@ -14,7 +14,7 @@ def load_data():
 data = load_data()
 
 if st.checkbox('Mostrar datos de empleados'):
-    st.write('Datos de los Empleados')
+    st.subheader('Datos de los Empleados')
     st.write(data)
 
 st.divider()
